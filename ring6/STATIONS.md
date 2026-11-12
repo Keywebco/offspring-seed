@@ -1,10 +1,8 @@
 Ring of Six — Station Scaffold
 
-Status: PROPOSED, NOT CANON. BLANK BY DESIGN.
+Status: PROPOSED, NOT CANON. NAMES FILLED BY ROGER, 2026-11-11.
 
-This file is a scaffold. The station names, their order, and their contracts are Roger's words. Nothing in this file fills them. Nothing in this file should be treated as a proposal for them, not even softly.
-
-Until Roger names the stations, this file holds the shape and stays empty.
+This file is a scaffold. The station names are Roger's words: Plus, Minus, Null, Past, Present, Future, in that order. Their contracts — checks, record, authority, handoff — are still Roger's words to fill. Nothing else in this file should be treated as canon.
 
 ---
 
@@ -33,14 +31,14 @@ Table — blank
 
 | # | Station name | Purpose | Checks | Record | Authority | Handoff |
 |---|--------------|---------|--------|--------|-----------|---------|
-| 1 | | | | | | |
-| 2 | | | | | | |
-| 3 | | | | | | |
-| 4 | | | | | | |
-| 5 | | | | | | |
-| 6 | | | | | | |
+| 1 | Plus | What is added, what grows, what is gained. | | | | |
+| 2 | Minus | What is removed, what shrinks, what is lost. | | | | |
+| 3 | Null | Neither, zero, empty, no change, no value. | | | | |
+| 4 | Past | What was, what happened before, what is already done. | | | | |
+| 5 | Present | What is, what is happening now, what is true in this moment. | | | | |
+| 6 | Future | What will be, what is coming, what is planned, what could be. |
 
-The rows are placeholders. They do not imply an order, a name, or a priority. They are six empty seats waiting for Roger's six words.
+The rows are Roger's six names, in Roger's order. Purpose is one sentence, from the name itself, confirmed by Roger. Checks, record, authority, and handoff are still to be filled, in Roger's words.
 
 ---
 
@@ -56,4 +54,4 @@ What this scaffold refuses
 
 Bottom line
 
-Station names are deferred. This file is blank by design. It becomes canon only when Roger fills it, in his words, and only then.
+Station names are Roger's words, given 2026-11-11: Plus, Minus, Null, Past, Present, Future. Purpose is one sentence each, from the name, confirmed by Roger. The rest of each station's contract is still deferred, in Roger's words.
