@@ -1,0 +1,80 @@
+# Ring of Six — Standing Checklist
+#
+# Status: PROPOSED, NOT CANON.
+#
+# This workflow is a mirror, not a gate. It posts the Ring of Six
+# checklist on new issues and new pull requests, so the work can see
+# itself before it moves. It blocks nothing. It approves nothing.
+# It records what is present and names what is missing.
+#
+# Fail-open, by design: if this workflow fails, the issue or pull
+# request still moves. A failed checklist is a missing map, not a
+# blocked door. Every step continues on error, and the job always
+# succeeds, so a workflow failure can never stop work.
+#
+# Effectful decisions do not stop here. If a task is effectful, this
+# checklist escalates. The Twelve gate, and Roger's exact word, carry
+# the decision. This workflow never approves effectful work, never
+# deploys, never deletes, never posts, and never spends money.
+#
+# Stations, Roger's words, 2026-11-11: Plus, Minus, Null, Past,
+# Present, Future. Their contracts are still Roger's words to fill.
+# This workflow does not name, order, or define them further.
+
+name: Ring of Six checklist
+
+on:
+  issues:
+    types: [opened, edited]
+  pull_request:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  ring6-checklist:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Post Ring of Six checklist
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Fail-open: any error here is caught, logged, and the
+            // job still succeeds. This is a mirror, not a gate.
+            try {
+              const body = [
+                '## Ring of Six — Standing Checklist',
+                '',
+                'Status: PROPOSED, NOT CANON.',
+                '',
+                'This checklist is a mirror, not a gate. It blocks nothing. It approves nothing. It records what is present and names what is missing.',
+                '',
+                'At each station — Plus, Minus, Null, Past, Present, Future — run the six checks in ring6/CHECKLIST.md. Answer each with one of: present, missing, not applicable, or unknown. "Unknown" is a valid answer and must be written down. Silence is not an answer.',
+                '',
+                '- Check 1 — Source present',
+                '- Check 2 — Confidence stated',
+                '- Check 3 — Falsifier named',
+                '- Check 4 — Label applied (FACT, INFERENCE, ASSUMPTION, or UNKNOWN)',
+                '- Check 5 — Kindness and consent',
+                '- Check 6 — Escalation if effectful',
+                '',
+                'If the work is effectful — money, permissions, identity, public claims, deployment, deletion, legal or safety matters, irreversible change, or external communication — this checklist does not proceed on its own. It escalates to the Twelve gate and waits for Roger\'s exact word. If there is doubt, treat the work as effectful and escalate.',
+                '',
+                'A pass with any check "missing" is not a failure. It is a map. A pass with any check "unknown" is not a failure either. It is the truth, written down, which is the point.',
+                '',
+                'See ring6/CHECKLIST.md and ring6/STATIONS.md. Changes go by PR, branch-first, for Pontus to review and Roger to approve.'
+              ].join('\n');
+              const issue_number = context.payload.issue ? context.payload.issue.number : context.payload.pull_request.number;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue_number,
+                body: body
+              });
+            } catch (error) {
+              core.warning('Ring of Six checklist comment could not be posted: ' + error.message);
+            }
